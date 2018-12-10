@@ -20,15 +20,20 @@ connection.connect();
 // Defining public directory for assets
 app.use(express.static('public'));
 
+// 
+var PostModel = require('./controllers/PostController.js');
+
 // Homepage
 app.get('/',function(req,res){
-    connection.query("SELECT * FROM posts", function (error, results, fields){
-        if(error){
-            throw error;
-        } 
-        console.log(results);
-    });
     res.render(__dirname + '/views/index.ejs');
+});
+
+
+app.get('/getAllPosts',function(req,res){
+    let posts = new PostModel();
+    posts.getPosts((connection), function(response){
+        res.send(response);
+    });
 });
 
 // 404 are redirected to homepage.

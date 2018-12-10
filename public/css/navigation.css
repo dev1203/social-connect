@@ -6,6 +6,7 @@
     width: 100vw;
     background: #f8f7fa;
     box-shadow: -2px 1px 18px -2px rgba(0,0,0,0.74);
+    z-index: 10;
 }
 
 #navigation-bar img {

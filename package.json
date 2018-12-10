@@ -12,7 +12,8 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "mysql": "^2.16.0",
-    "vue": "^2.5.19"
+    "vue": "^2.5.19",
+    "vue-resource": "^1.5.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.7"

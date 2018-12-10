@@ -2,7 +2,7 @@ body,html {
     padding: 0px;
     margin: 0px;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     background:rgba(0, 0, 0, 0.02);
     font-family: 'Inconsolata', monospace;
 }
@@ -16,6 +16,7 @@ body,html {
 }
 
 .newsfeed-card {
+    display: inline-block;
     max-height: 400px;
     width: 50vw;
 }
