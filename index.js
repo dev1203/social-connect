@@ -11,16 +11,23 @@ const app = express();
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
-  user     : 'me',
-  password : 'secret',
-  database : 'my_db'
+  user     : 'root',
+  password : '',
+  database : 'social'
 });
+connection.connect();
 
 // Defining public directory for assets
 app.use(express.static('public'));
 
 // Homepage
 app.get('/',function(req,res){
+    connection.query("SELECT * FROM posts", function (error, results, fields){
+        if(error){
+            throw error;
+        } 
+        console.log(results);
+    });
     res.render(__dirname + '/views/index.ejs');
 });
 
