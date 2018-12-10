@@ -1,0 +1,45 @@
+body,html {
+    padding: 0px;
+    margin: 0px;
+    width: 100vw;
+    height: 100%;
+    background:rgba(0, 0, 0, 0.02);
+    font-family: 'Inconsolata', monospace;
+}
+
+#main-content {
+    border: red;
+    padding-top:100px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.newsfeed-card {
+    max-height: 400px;
+    width: 50vw;
+}
+
+.newsfeed-card__image {
+    max-width: 100%;
+}
+
+.newsfeed-card__image-div {
+    padding: 0px;
+}
+
+.newsfeed-card__top {
+    padding: 10px 20px;
+    display: inline;
+}
+
+.newsfeed-card__top-image img {
+    max-width: 50px;
+    border-radius: 50%;
+}
+
+.newsfeed-card__like {
+    max-width: 30px;
+    padding: 0px;
+    margin: 0px;
+}
