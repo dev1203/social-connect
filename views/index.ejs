@@ -2,8 +2,30 @@
 <!------------------------------------------------>
 <!--                Main content                -->
 <!------------------------------------------------>
-    <div class="container" id = 'main-content' v-html = "data">
-        
+    <div class="container" id = 'main-content'>
+        <template v-for="val in data">
+                <div class="card newsfeed-card" :id="val.id">
+                    <div class='newsfeed-card__top'>
+                        <div class="newsfeed-card__top-image">
+                            <img src="https://instagram.fyvr2-1.fna.fbcdn.net/vp/e71f03a4b1e41b36ab77f5ddcb347673/5C8B9A5B/t51.2885-19/s150x150/44885401_295306307781183_7772622368773505024_n.jpg?_nc_ht=instagram.fyvr2-1.fna.fbcdn.net" alt="">
+                            <span class="newsfeed-card__top-name"><a>Dev Singh</a></span>
+                        </div>
+                    </div>
+                    <div class="card-body newsfeed-card__image-div">
+                        <img :src="val.media" alt="" class = 'newsfeed-card__image'>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <template v-if=" val.liked == 'liked' ">
+                            <img :id="val.id" @click="likeEvent()" data-image="linked.png" class="newsfeed-card__like" src="images/liked.png" alt="">
+                        </template>
+                        <template v-else>
+                            <img :id="val.id" @click="likeEvent()" data-image="unliked.png" class="newsfeed-card__like" src="images/unliked.png" alt="">
+                        </template>
+                        <span>{{ val.likes }}</span>
+                        <span>{{ val.text }}</span>
+                    </div>
+                </div>
+        </template>
     </div>
 <!------------------------------------------------>
 <!--                Main content End            -->
