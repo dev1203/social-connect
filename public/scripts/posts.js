@@ -38,6 +38,6 @@ var app = new Vue({
         }
     },
     beforeMount(){
-        this.loadPosts()
+        this.loadPosts();
      }
   })
